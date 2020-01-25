@@ -1,0 +1,11 @@
+
+Start Kafka
+docker-compose up
+
+Start Quarkus
+./mvnw quarkus:dev
+
+Tests
+curl -w "\n"  -d '{"msg":"FIRST MESSAGE"}' -H "Content-Type: application/json" -X POST http://localhost:8080/hello 
+
+
