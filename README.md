@@ -1,12 +1,15 @@
 
 
 1. Start Kafka
+
 docker-compose up
 
 2. Start Quarkus
+
 ./mvnw quarkus:dev
 
 3. Test
+
 curl -w "\n"  -d '{"msg":"FIRST MESSAGE"}' -H "Content-Type: application/json" -X POST http://localhost:8080/hello 
 
 This fails in ExampleModel.hello() - this.ownercreated is null
