@@ -8,6 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class ExampleResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response hello(ExampleModel example) {
     	ownerCreatedChannel.send(example.msg);
-        return Response.status(201).build();
+        return Response.status(202).build();
     }
     
     @Incoming("hello-incoming")
