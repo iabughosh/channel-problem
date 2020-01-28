@@ -113,6 +113,25 @@
               </execution>
             </executions>
           </plugin>
+          <plugin>
+			<groupId>io.fabric8</groupId>
+			<artifactId>docker-maven-plugin</artifactId>
+			<version>0.31.0</version>
+			<configuration>
+				<registry>iabughosh</registry>
+				<images>
+					<image>
+						<name>micro-channel</name>
+						<build>
+							<tags>
+								<tag>latest</tag>
+							</tags>
+							<dockerFile>${project.basedir}/Dockerfile</dockerFile>
+						</build>
+					</image>
+				</images>
+			</configuration>
+		</plugin>
         </plugins>
       </build>
       <properties>
