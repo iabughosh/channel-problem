@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Building Docker Image."
-./mvnw docker:build docker:push
+./mvnw package docker:build docker:push
