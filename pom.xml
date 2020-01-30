@@ -60,6 +60,25 @@
   <build>
     <plugins>
       <plugin>
+		<groupId>io.fabric8</groupId>
+		<artifactId>docker-maven-plugin</artifactId>
+		<version>0.33.0</version>
+		<configuration>
+			<!-- <registry>docker.io/iabughosh/micro-channel</registry>-->
+			<images>
+				<image>
+					<name>iabughosh/micro-channel</name>
+					<build>
+						<tags>
+							<tag>${project.version}</tag>
+						</tags>
+						<dockerFile>${project.basedir}/Dockerfile</dockerFile>
+					</build>
+				</image>
+			</images>
+		</configuration>
+	</plugin>
+      <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus-plugin.version}</version>
@@ -113,25 +132,6 @@
               </execution>
             </executions>
           </plugin>
-          <plugin>
-			<groupId>io.fabric8</groupId>
-			<artifactId>docker-maven-plugin</artifactId>
-			<version>0.31.0</version>
-			<configuration>
-				<registry>iabughosh</registry>
-				<images>
-					<image>
-						<name>micro-channel</name>
-						<build>
-							<tags>
-								<tag>latest</tag>
-							</tags>
-							<dockerFile>${project.basedir}/Dockerfile</dockerFile>
-						</build>
-					</image>
-				</images>
-			</configuration>
-		</plugin>
         </plugins>
       </build>
       <properties>
