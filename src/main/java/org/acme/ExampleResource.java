@@ -21,6 +21,6 @@ public class ExampleResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response hello(ExampleModel example) {
-        return Response.status(201, "Nice!!!").build();
+        return Response.status(202, "Nice!!!").build();
     }
 }
