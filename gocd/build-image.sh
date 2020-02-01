@@ -1,3 +1,4 @@
 #!/bin/bash
-echo "Building Docker Image."
-./mvnw package docker:build docker:push
+echo "Building & Pushing Docker Image."
+./mvnw package
+docker build -t iabughosh/micro-channel .
