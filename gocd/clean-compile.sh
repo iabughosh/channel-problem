@@ -1,2 +1,2 @@
 #!/bin/bash
-./mvnw clean compile 
+./mvnw clean compile package
