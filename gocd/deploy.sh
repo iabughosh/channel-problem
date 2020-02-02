@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --rm -d -p 8080:8080 iabughosh/micro-channel:$GO_DEPENDENCY_LABEL_MICRO_CHANNEL
+docker run --rm -d -p 8080:8080 $ARTIFACT_IMAGE
